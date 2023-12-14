@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export default styled.input`
   background-color: #fff;
@@ -19,4 +19,9 @@ export default styled.input`
   &::placeholder {
     color: ${({ theme }) => theme.colors.gray[200]};
   }
+
+  ${({ theme, error }) => error && css`
+      color: ${theme.colors.danger.main};
+      border-color: ${theme.colors.danger.main} !important;
+  `}
 `;
