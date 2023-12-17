@@ -1,6 +1,5 @@
-// import { InputSearchContainer } from './styles';
-
 import { Link } from 'react-router-dom';
+
 import {
   Card, Container, Header, InputSearchContainer, ListContainer,
 } from './styles';
