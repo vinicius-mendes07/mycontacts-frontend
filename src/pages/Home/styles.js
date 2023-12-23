@@ -50,26 +50,29 @@ export const Header = styled.header`
   }
   `;
 
-export const ListContainer = styled.div`
+export const ListHeader = styled.header`
   margin-top: 24px;
+  margin-bottom: 8px;
 
-  header {
-    margin-bottom: 8px;
+  button {
+    display: flex;
+    align-items: center;
+    border: none;
+    background-color: transparent;
 
-    button {
-      display: flex;
-      align-items: center;
-      border: none;
-      background-color: transparent;
+    span {
+      margin-right: 8px;
+      color: ${({ theme }) => theme.colors.primary.main};
+      font-size: 16px;
+      font-weight: bold;
+    }
 
-      span {
-        margin-right: 8px;
-        color: ${({ theme }) => theme.colors.primary.main};
-        font-size: 16px;
-        font-weight: bold;
-      }
+    img {
+      transition: transform 0.2s ease-in;
+      transform: rotate(${({ orderBy }) => (orderBy === 'asc' ? '180deg' : '0deg')});
     }
   }
+
 `;
 
 export const Card = styled.div`
