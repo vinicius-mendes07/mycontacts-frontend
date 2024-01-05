@@ -43,13 +43,9 @@ export const Footer = styled.footer`
     margin-right: 24px;
     border: none;
     font-size: 16px;
-  }
-/*
 
-  .btn-delete {
-    border-radius: 4px;
-    color: #fff;
-    background-color: #FC5050;
-    font-weight: bold;
-  } */
+    &[disabled] {
+      cursor: not-allowed;
+    }
+  }
 `;

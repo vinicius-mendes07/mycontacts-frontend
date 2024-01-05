@@ -26,7 +26,7 @@ export default function EditContact() {
         contactFormRef.current.setFieldsValues(contactData);
         setIsLoading(false);
         setContactName(contactData.name);
-      } catch (error) {
+      } catch {
         history.push('/');
         toast({
           type: 'danger',
@@ -55,7 +55,7 @@ export default function EditContact() {
         type: 'success',
         text: 'Contato editado com sucesso!',
       });
-    } catch (error) {
+    } catch {
       toast({
         type: 'danger',
         text: 'Ocorreu um erro ao editar o contato!',
