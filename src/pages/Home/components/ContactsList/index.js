@@ -15,12 +15,12 @@ export default function ContactsList({
   return (
     <>
       {filteredContacts.length > 0 && (
-      <ListHeader orderBy={orderBy}>
-        <button type="button" className="sort-button" onClick={onToggleOrderBy}>
-          <span>Nome</span>
-          <img src={arrow} alt="Arrow" />
-        </button>
-      </ListHeader>
+        <ListHeader orderBy={orderBy}>
+          <button type="button" className="sort-button" onClick={onToggleOrderBy}>
+            <span>Nome</span>
+            <img src={arrow} alt="Arrow" />
+          </button>
+        </ListHeader>
       )}
 
       {filteredContacts.map((contact) => (

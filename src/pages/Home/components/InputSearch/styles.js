@@ -14,7 +14,7 @@ export const Container = styled.div`
     outline: none;
 
     &::placeholder {
-      color: #BCBCBC;
+      color: ${({ theme }) => theme.colors.gray[200]};
     }
   }
 `;
