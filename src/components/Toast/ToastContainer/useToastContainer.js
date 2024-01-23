@@ -4,11 +4,9 @@ import { toastEventManager } from '../../../utils/toast';
 
 export default function useToastContainer() {
   const {
-    items: messages,
     setItems: setMessages,
-    pendingRemovalItemsIds,
     handleRemoveItem,
-    handleAnimationEnd,
+    renderList,
   } = useAnimatedList();
 
   useEffect(() => {
@@ -29,9 +27,7 @@ export default function useToastContainer() {
   }, [setMessages]);
 
   return {
-    pendingRemovalItemsIds,
-    messages,
     handleRemoveItem,
-    handleAnimationEnd,
+    renderList,
   };
 }

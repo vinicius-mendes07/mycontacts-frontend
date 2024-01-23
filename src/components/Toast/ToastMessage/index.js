@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import { useEffect, useRef } from 'react';
 
 import { Container } from './styles';
 
@@ -11,29 +10,13 @@ export default function ToastMessage({
   isLeaving,
   message,
   onRemoveMessage,
-  onAnimationEnd,
+  animatedRef,
 }) {
   const { handleRemoveToast } = useToastMessage(message, onRemoveMessage);
 
-  const animatedElementRef = useRef(null);
-
-  useEffect(() => {
-    function handleAnimationEnd() {
-      onAnimationEnd(message.id);
-    }
-    const elementRef = animatedElementRef.current;
-
-    if (isLeaving) {
-      elementRef.addEventListener('animationend', handleAnimationEnd);
-    }
-    return () => {
-      elementRef.removeEventListener('animationend', handleAnimationEnd);
-    };
-  }, [isLeaving, onAnimationEnd, message.id]);
-
   return (
     <Container
-      ref={animatedElementRef}
+      ref={animatedRef}
       type={message.type}
       onClick={handleRemoveToast}
       tabIndex={0}
@@ -55,6 +38,6 @@ ToastMessage.propTypes = {
     duration: PropTypes.number,
   }).isRequired,
   onRemoveMessage: PropTypes.func.isRequired,
-  onAnimationEnd: PropTypes.func.isRequired,
   isLeaving: PropTypes.bool.isRequired,
+  animatedRef: PropTypes.shape().isRequired,
 };
