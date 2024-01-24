@@ -15,8 +15,6 @@ function ToastMessage({
 }) {
   const { handleRemoveToast } = useToastMessage(message, onRemoveMessage);
 
-  console.log(`${message.id} renderizou`);
-
   return (
     <Container
       ref={animatedRef}
